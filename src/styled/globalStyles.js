@@ -1,0 +1,25 @@
+import { createGlobalStyle } from 'styled-components'
+import reset from 'styled-reset'
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+  /* other styles */
+  * {
+  position: relative;
+  box-sizing: border-box;
+}
+  body{
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#000;
+    letter-spacing :-1px
+  }
+  a{
+    text-decoration: none;
+    color: #333;
+  }
+  li{
+    list-style: none;
+  }
+`
+export default GlobalStyle;
