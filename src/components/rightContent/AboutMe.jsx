@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 
 const AboutMe = memo(() => {
   return (
-    <>
-      AboutMe입니다.
-    </>
+    <div className='section'>
+      <img src="../public/images/profilepic.png" alt="" />
+    </div>
   );
 });
 

@@ -6,7 +6,7 @@ export const LeftContentContainer = styled.div`
   left: 0;
   height: 100%;
   width: ${props => (props.stateProps ? '40%' : '100%')};
-  background-color: #cccccc; 
+  background-color: #000; 
   transition: width 0.6s ease;
   button{
     display:block;
