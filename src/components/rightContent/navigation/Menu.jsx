@@ -2,23 +2,31 @@ import React, { memo, useState } from 'react';
 
 import { MenuContainer } from '../../../styled/RightContentStyles';
 import useStore from '../../../state';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const Menu = memo(() => {
-  const { currentMenu, menu } = useStore(state => state)
-  const { handleCurrentMenu } = useStore(state => state)
+  const { currentMenu, activatedMenu } = useStore(state => state)
+  const { handleClickMenu, handleDelMenu } = useStore(state => state)
   return (
     <MenuContainer>
       {
-        menu.map(item => {
+        activatedMenu.map(item => {
           const { id, label, image } = item;
           return (
             <li
               key={id}
-              onClick={() => handleCurrentMenu(id)}
               className={currentMenu === id ? "on" : ""}
             >
-              <img src={image} alt={label} />
-              <span>{label}</span>
+              <div className='text_box'
+                onClick={() => handleClickMenu(id)}>
+                <img src={image} alt={label} />
+                <span>{label}</span>
+              </div>
+              <div className='close_box'>
+                <i onClick={() => handleDelMenu(id)}>
+                  <AiOutlineClose />
+                </i>
+              </div>
             </li>
           )
         })

@@ -6,7 +6,11 @@ import { BiChevronRight } from 'react-icons/bi';
 import useStore from '../../../state';
 const Path = memo(() => {
   const { menu, currentMenu } = useStore(state => state);
-  const pathName = menu[currentMenu - 1].path;
+  const { handleGotoHome } = useStore(state => state);
+  const pathName = () => {
+    if (currentMenu == 0) return
+    else return menu[currentMenu - 1].path;
+  }
   return (
     <PathContainer>
       <ul className='icon_box'>
@@ -17,12 +21,17 @@ const Path = memo(() => {
       </ul>
       <div className='path_box'>
         <ul className='path_box_inner'>
-          <li><i><AiOutlineHome /></i></li>
+          <li
+            onClick={handleGotoHome}
+            className='can_hover'
+          >
+            <i><AiOutlineHome /></i>
+          </li>
           {
-            pathName &&
+            pathName() !== null &&
             <>
               <li><i><BiChevronRight /></i></li>
-              <span>{pathName}</span>
+              <span>{pathName()}</span>
             </>
           }
         </ul>

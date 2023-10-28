@@ -8,19 +8,20 @@ import AboutMe from './rightContent/AboutMe';
 import Project from './rightContent/Project';
 import Menu from './rightContent/navigation/Menu';
 import Path from './rightContent/navigation/Path';
+import Home from './rightContent/Home';
 
 const RightContent = memo(() => {
   const { isRightContent, currentMenu } = useStore(state => state)
-
   return (
     <>
       <RightContentContainer stateProps={isRightContent}>
         <Menu />
         <Path />
         <ContentContainer>
-          {currentMenu === 1 && <AboutMe />}
-          {currentMenu === 2 && <Skill />}
-          {currentMenu === 3 && <Project />}
+          {currentMenu === 1 && <Home />}
+          {currentMenu === 2 && <AboutMe />}
+          {currentMenu === 3 && <Skill />}
+          {currentMenu === 4 && <Project />}
         </ContentContainer>
       </RightContentContainer>
     </>

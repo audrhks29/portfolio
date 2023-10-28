@@ -17,9 +17,7 @@ const Main = memo(() => {
   return (
     <MainContainer heightProp={conHeight}>
       <LeftContent />
-      {/* <img src="../public/images/profilepic.png" alt="" /> */}
       <RightContent />
-
     </MainContainer>
   );
 });

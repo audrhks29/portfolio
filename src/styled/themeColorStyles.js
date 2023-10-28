@@ -1,6 +1,7 @@
 export const conBgColor = "#191919"
 export const liOnColor = "#1c2123"
 export const liHoverColor = "#131a1f"
-export const bgColor = "#040c0f"
+export const liColor = "#040c0f"
 export const pathColor = "#292d30"
 export const textColor = "#fff"
+export const pathHoverColor = "#363a3d"

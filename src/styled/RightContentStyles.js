@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { bgColor, conBgColor, liHoverColor, liOnColor, pathColor, textColor } from './themeColorStyles';
+import { liColor, conBgColor, liHoverColor, liOnColor, pathColor, textColor, pathHoverColor } from './themeColorStyles';
 
+// RightContent.jsx
 export const RightContentContainer = styled.div`
   position:absolute;
   top:0;
@@ -8,9 +9,10 @@ export const RightContentContainer = styled.div`
   height: 100%;
   width: ${props => (props.stateProps ? '60%' : '0%')};
   transition: width 0.6s ease;
-  background-color: ${bgColor};
+  background-color: ${conBgColor};
 `
 
+// Menu.jsx
 export const MenuContainer = styled.ul`
   width:100%;
   height:35px;
@@ -19,23 +21,42 @@ export const MenuContainer = styled.ul`
   align-self:center;
   margin:10px 0 0 10px;
   color:${textColor};
+  font-size:14px;
   li{
-    background-color:${bgColor};
+    background-color:${liColor};
     width:200px;
     cursor: pointer;
     text-align:center;
     border-radius: 10px 10px 0 0 ;
     display:flex;
-    align-items:center;
     padding:0 10px;
-    img{
+    .text_box{
+      height: 100%;
+      display:flex;
+      vertical-align:middle;
+      align-items:center;
+      width:100%;
+      img{
       height:25px;
+      vertical-align:middle;
+      }
+      span{
+        /* display: block; */
+        margin-left:10px;
+      }
     }
-    span{
-      margin-left:10px;
+    .close_box{
+      margin-left:auto;
+      i{
+        padding:3px;
+      }
+      i:hover{
+        background-color: ${pathColor};
+      }
     }
+    
   }
-  li.on{
+  li.on, li.on:hover{
     background-color: ${liOnColor};
   }
   li:hover{
@@ -43,6 +64,7 @@ export const MenuContainer = styled.ul`
   }
 `
 
+// Path.jsx
 export const PathContainer = styled.div`
   color:${textColor};
   width:100%;
@@ -73,6 +95,9 @@ export const PathContainer = styled.div`
     li:hover{
       background-color: ${pathColor};
     }
+    span{
+      font-size:14px;
+    }
   }
   .path_box{
     width: calc(100% - 200px);
@@ -87,18 +112,29 @@ export const PathContainer = styled.div`
       background-color: ${pathColor};
       width: 100%;
       height:32px;
-      line-height:32px;
+      line-height:30px;
       padding:0 10px;
       display:flex;
       li{
         margin-right:10px;
+        i{
+          vertical-align: middle;
+        }
+      }
+      .can_hover{
+        cursor: pointer;
+        padding : 0 5px;
+      }
+      .can_hover:hover{
+        background-color: ${pathHoverColor};
       }
     }
   }
 `
 
 export const ContentContainer = styled.div`
-  padding:10px;
+  width: 100%;
+  padding:20px;
   background-color: ${conBgColor};
   .section{
     img{
@@ -107,3 +143,21 @@ export const ContentContainer = styled.div`
   }
 `
 RightContentContainer.shouldForwardProp = (prop) => prop !== 'stateProps';
+
+// Home.jsx
+export const HomeContainer = styled.div`
+  ul{
+    display: flex;
+    width: 100%;
+    li{
+      display: flex;
+      flex-direction:column;
+      text-align:center;
+      margin-right:20px;
+      width:20%;
+    }
+    li:hover{
+      background-color: ${pathColor};
+    }
+  }
+`
