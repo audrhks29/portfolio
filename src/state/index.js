@@ -5,13 +5,13 @@ const useStore = create((set, getState) => ({
   currentMenu: 1,
   selectedMenu: [],
   activatedMenu: [
-    { id: 1, label: "Home", image: "../public/images/ico/home.webp", path: null },
+    { id: 1, label: "Home", image: "../public/images/ico/ui/home.webp", path: null },
   ],
   menu: [
-    { id: 1, label: "Home", image: "../public/images/ico/home.webp", path: null },
-    { id: 2, label: "About Me", image: "../public/images/ico/html.png", path: "about me" },
-    { id: 3, label: "Skill", image: "../public/images/ico/css.png", path: "skill" },
-    { id: 4, label: "Project", image: "../public/images/ico/js.png", path: "project" }
+    { id: 1, label: "Home", image: "../public/images/ico/ui/home.webp", path: null },
+    { id: 2, label: "About Me", image: "../public/images/ico/ui/html.png", path: "about me" },
+    { id: 3, label: "Skill", image: "../public/images/ico/ui/css.png", path: "skill" },
+    { id: 4, label: "Project", image: "../public/images/ico/ui/js.png", path: "project" }
   ],
 
   toggleIsRightContent: () => {

@@ -10,7 +10,7 @@ const Home = memo(() => {
   const filteredMenu = menu.filter(item => item.id !== 1);
   return (
     <HomeContainer>
-      <ul>
+      <ul className='polder'>
         {
           filteredMenu.map(item => {
             const { id, label, image } = item;

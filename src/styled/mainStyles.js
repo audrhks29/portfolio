@@ -5,7 +5,7 @@ import { textColor } from './themeColorStyles';
 export const MainContainer = styled.div`
   height: ${(props) => props.heightProp}px;
   position: relative;
-  overflow: hidden;
-  color:${textColor}
+  overflow-x: hidden;
+  color:${textColor};
 `
 MainContainer.shouldForwardProp = (prop) => prop !== 'heightProp';
