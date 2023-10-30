@@ -249,20 +249,24 @@ export const ContentContainer = styled.div`
     ul{
       display:flex;
       flex-wrap:wrap;
-      justify-content:space-between;
-      .personalProject_list{
-        width:30%;
-        padding:10px;
+      .projectList{
+        width:315px;
+        padding:20px;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+        align-items:center;
         .projectImage{
           img{
-            width:100%;
+            max-width:100%;
+            max-height:275px;
           }
         }
         .projectName{
           text-align:center;
         }
       }
-      .personalProject_list:hover{
+      .projectList:hover{
         background-color: ${pathColor};
       }
     }

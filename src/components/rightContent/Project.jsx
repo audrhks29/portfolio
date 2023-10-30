@@ -4,6 +4,7 @@ import useProjectStore from '../../state/project';
 const Project = memo(() => {
   const { projectData } = useProjectStore(state => state)
   const personalProject = projectData.filter(item => item.type === "personal")
+  const teamProject = projectData.filter(item => item.type === "team")
   return (
     <div className='project_content'>
       <h3>Project !</h3>
@@ -16,7 +17,7 @@ const Project = memo(() => {
             personalProject.map(item => {
               const { id, title, image } = item;
               return (
-                <li key={id} className='personalProject_list'>
+                <li key={id} className='projectList'>
                   <div className='projectImage'>
                     <img src={image} alt="" />
                   </div>
@@ -33,10 +34,10 @@ const Project = memo(() => {
         </div>
         <ul>
           {
-            personalProject.map(item => {
+            teamProject.map(item => {
               const { id, title, image } = item;
               return (
-                <li key={id} className='personalProject_list'>
+                <li key={id} className='projectList'>
                   <div className='projectImage'>
                     <img src={image} alt="" />
                   </div>
