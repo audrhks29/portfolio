@@ -1,6 +1,9 @@
 import create from 'zustand';
 
-const useProjectStore = create((set) => ({
+const useProjectStore = create((set, getState) => ({
+  projectPopupState: false,
+  selectedProject: {},
+
   projectData: [
     {
       id: 1,
@@ -8,7 +11,8 @@ const useProjectStore = create((set) => ({
       title: "ElectCar",
       type: "personal",
       pageLink: "https://audrhks29.github.io/ElectCar/dist/",
-      repoLink: "https://github.com/audrhks29/ElectCar"
+      repoLink: "https://github.com/audrhks29/ElectCar",
+      isLogin: false
     },
     {
       id: 2,
@@ -16,7 +20,8 @@ const useProjectStore = create((set) => ({
       title: "Semoseo",
       type: "personal",
       pageLink: "https://audrhks29.github.io/Semoseo/dist",
-      repoLink: "https://github.com/audrhks29/Semoseo"
+      repoLink: "https://github.com/audrhks29/Semoseo",
+      isLogin: true
     },
     {
       id: 3,
@@ -24,7 +29,8 @@ const useProjectStore = create((set) => ({
       title: "Forment",
       type: "personal",
       pageLink: "https://audrhks29.github.io/Forment/dist",
-      repoLink: "https://github.com/audrhks29/Forment"
+      repoLink: "https://github.com/audrhks29/Forment",
+      isLogin: true
     },
     {
       id: 4,
@@ -32,7 +38,8 @@ const useProjectStore = create((set) => ({
       title: "ManCity",
       type: "personal",
       pageLink: "https://audrhks29.github.io/ManCity/dist/",
-      repoLink: "https://github.com/audrhks29/ManCity"
+      repoLink: "https://github.com/audrhks29/ManCity",
+      isLogin: false
     },
     {
       id: 5,
@@ -40,7 +47,8 @@ const useProjectStore = create((set) => ({
       title: "Megabox",
       type: "personal",
       pageLink: "https://audrhks29.github.io/MegaBox/dist/",
-      repoLink: "https://github.com/audrhks29/MegaBox"
+      repoLink: "https://github.com/audrhks29/MegaBox",
+      isLogin: false
     },
     {
       id: 6,
@@ -48,7 +56,8 @@ const useProjectStore = create((set) => ({
       title: "FSM",
       type: "team",
       pageLink: "https://hajinkimm.github.io/TP_FSM/dist/",
-      repoLink: "https://github.com/audrhks29/TP_FSM"
+      repoLink: "https://github.com/audrhks29/TP_FSM",
+      isLogin: false
     },
     {
       id: 7,
@@ -56,7 +65,8 @@ const useProjectStore = create((set) => ({
       title: "EZtour-Mobile",
       type: "team",
       pageLink: "https://yeonhub.github.io/TP-EZtour_vanillaJS_mobile/",
-      repoLink: "https://github.com/audrhks29/TP-EZtour_vanillaJS_mobile"
+      repoLink: "https://github.com/audrhks29/TP-EZtour_vanillaJS_mobile",
+      isLogin: false
     },
     {
       id: 8,
@@ -64,9 +74,26 @@ const useProjectStore = create((set) => ({
       title: "EZtour",
       type: "team",
       pageLink: "https://audrhks29.github.io/Team-project-VanillaJS/Team-project-VanillaJS/index.html",
-      repoLink: "https://github.com/audrhks29/Team-project-VanillaJS"
+      repoLink: "https://github.com/audrhks29/Team-project-VanillaJS",
+      isLogin: false
     }
-  ]
+  ],
+
+  openProjectPopup: (id) => {
+    const state = getState();
+    const filtered = state.projectData.filter(item => item.id === id)
+    set({ projectPopupState: true, selectedProject: [...filtered] })
+  },
+
+  closeProjectPopup: () => {
+    set({ projectPopupState: false, selectedProject: [] })
+  },
+
+  changeSelectedProject: (id) => {
+    const state = getState();
+    const filtered = state.projectData.filter(item => item.id === id)
+    set({ selectedProject: [...filtered] })
+  }
 }));
 
 export default useProjectStore;

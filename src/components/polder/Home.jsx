@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { HomeContainer } from '../../styled/RightContentStyles';
+import { HomeContainer } from '../../styled/polderStyles';
 
 import useStore from '../../state';
 

@@ -2,23 +2,28 @@ import React, { memo, useEffect, useState } from 'react';
 
 import { MainContainer } from '../styled/mainStyles';
 
-import LeftContent from '../components/LeftContent';
-import RightContent from '../components/RightContent';
+import Polder from '../components/Polder';
+import Background from '../components/BackGround';
+import ProjectPopup from '../components/ProjectPopup';
+
 import useStore from '../state';
+import useProjectStore from '../state/project';
 
 const Main = memo(() => {
-  const { currentMenu } = useStore(state => state)
+  const { popupState, currentMenu } = useStore(state => state)
+  const { projectPopupState } = useProjectStore(state => state);
   const [conHeight, setConHeight] = useState()
 
   useEffect(() => {
     const height = window.innerHeight;
     setConHeight(height)
   }, [currentMenu])
-  console.log(conHeight);
+
   return (
     <MainContainer heightProp={conHeight}>
-      <LeftContent />
-      <RightContent />
+      <Background />
+      {popupState && <Polder />}
+      {popupState && projectPopupState && <ProjectPopup />}
     </MainContainer>
   );
 });

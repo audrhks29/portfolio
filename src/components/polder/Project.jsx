@@ -1,8 +1,10 @@
 import React, { memo } from 'react';
+
 import useProjectStore from '../../state/project';
+import useStore from '../../state';
 
 const Project = memo(() => {
-  const { projectData } = useProjectStore(state => state)
+  const { projectData, openProjectPopup } = useProjectStore(state => state)
   const personalProject = projectData.filter(item => item.type === "personal")
   const teamProject = projectData.filter(item => item.type === "team")
   return (
@@ -17,7 +19,11 @@ const Project = memo(() => {
             personalProject.map(item => {
               const { id, title, image } = item;
               return (
-                <li key={id} className='projectList'>
+                <li
+                  key={id}
+                  className='projectList'
+                  onClick={() => openProjectPopup(id)}
+                >
                   <div className='projectImage'>
                     <img src={image} alt="" />
                   </div>
@@ -37,7 +43,11 @@ const Project = memo(() => {
             teamProject.map(item => {
               const { id, title, image } = item;
               return (
-                <li key={id} className='projectList'>
+                <li
+                  key={id}
+                  className='projectList'
+                  onClick={() => openProjectPopup(id)}
+                >
                   <div className='projectImage'>
                     <img src={image} alt="" />
                   </div>

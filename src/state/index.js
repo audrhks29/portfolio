@@ -1,12 +1,12 @@
 import create from 'zustand';
 
 const useStore = create((set, getState) => ({
-  isRightContent: false,
+  popupState: false,
+
   currentMenu: 1,
   selectedMenu: [],
-  activatedMenu: [
-    { id: 1, label: "Home", image: "../public/images/ico/ui/home.webp", path: null },
-  ],
+  activatedMenu: [],
+
   menu: [
     { id: 1, label: "Home", image: "../public/images/ico/ui/home.webp", path: null },
     { id: 2, label: "About Me", image: "../public/images/ico/ui/html.png", path: "about me" },
@@ -14,9 +14,21 @@ const useStore = create((set, getState) => ({
     { id: 4, label: "Project", image: "../public/images/ico/ui/js.png", path: "project" }
   ],
 
-  toggleIsRightContent: () => {
+  openPopup: () => {
     const state = getState()
-    set({ isRightContent: !state.isRightContent })
+    if (!state.popupState) {
+      set({
+        activatedMenu:
+          [
+            { id: 1, label: "Home", image: "../public/images/ico/ui/home.webp", path: null }
+          ]
+      })
+      set({ popupState: true, currentMenu: 1 })
+    }
+  },
+
+  closePopup: () => {
+    set({ popupState: false, currentMenu: 0, activatedMenu: [] })
   },
 
   handleClickMenu: (id) => {
@@ -36,19 +48,14 @@ const useStore = create((set, getState) => ({
 
   handleDelMenu: (id) => {
     const state = getState();
-    if (id === 1) {
-      return
+    if (state.activatedMenu.length === 1) {
+      set({ popupState: false, activatedMenu: [], currentMenu: 0 })
     }
     else {
       const filtered = state.activatedMenu.filter(item => item.id !== id)
-      console.log("filtered");
-      console.log(filtered);
       set({ activatedMenu: [...filtered] })
       const lastMenuIndex = filtered.length;
-      console.log(lastMenuIndex);
       set({ currentMenu: filtered[lastMenuIndex - 1].id })
-      console.log("filtered ID");
-      console.log(filtered[lastMenuIndex - 1].id);
     }
   }
 }));

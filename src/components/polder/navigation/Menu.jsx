@@ -1,8 +1,10 @@
 import React, { memo, useState } from 'react';
 
-import { MenuContainer } from '../../../styled/RightContentStyles';
 import useStore from '../../../state';
+
 import { AiOutlineClose } from 'react-icons/ai';
+
+import { MenuContainer } from '../../../styled/polderStyles';
 
 const Menu = memo(() => {
   const { currentMenu, activatedMenu } = useStore(state => state)

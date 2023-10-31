@@ -14,9 +14,14 @@ const Learning = memo(() => {
         <ul>
           {
             learningSkill.map(item => {
-              const { image } = item;
+              const { id, text, image } = item;
               return (
-                <img src={image} alt="" />
+                <li key={id} className='learningList'>
+                  <div className='learningImage'>
+                    <img src={image} alt="" />
+                  </div>
+                  <p className='learningName'>{text}</p>
+                </li>
               )
             })
           }
@@ -29,9 +34,14 @@ const Learning = memo(() => {
         <ul>
           {
             laterSkill.map(item => {
-              const { image } = item;
+              const { id, text, image } = item;
               return (
-                <img src={image} alt="" />
+                <li key={id} className='learningList'>
+                  <div className='learningImage'>
+                    <img src={image} alt="" />
+                  </div>
+                  <p className='learningName'>{text}</p>
+                </li>
               )
             })
           }

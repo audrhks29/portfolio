@@ -1,16 +1,23 @@
 import React, { memo } from 'react';
-import { PathContainer } from '../../../styled/RightContentStyles';
+
 import { AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineArrowUp, AiOutlineHome } from 'react-icons/ai';
+
 import { BsArrowClockwise } from 'react-icons/bs';
 import { BiChevronRight } from 'react-icons/bi';
+
 import useStore from '../../../state';
+
+import { PathContainer } from '../../../styled/polderStyles';
+
 const Path = memo(() => {
   const { menu, currentMenu } = useStore(state => state);
   const { handleGotoHome } = useStore(state => state);
+
   const pathName = () => {
     if (currentMenu == 0) return
     else return menu[currentMenu - 1].path;
   }
+
   return (
     <PathContainer>
       <ul className='icon_box'>
