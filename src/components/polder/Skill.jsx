@@ -4,6 +4,7 @@ import LanguageSkill from './skill/LanguageSkill';
 import AvailableTools from './skill/AvailableTools';
 import Library from './skill/Library';
 import Learning from './skill/Learning';
+import BuildTools from './skill/BuildTools';
 
 const Skill = memo(() => {
   return (
@@ -12,6 +13,7 @@ const Skill = memo(() => {
       <LanguageSkill />
       <Library />
       <AvailableTools />
+      <BuildTools />
       <Learning />
     </div>
   );

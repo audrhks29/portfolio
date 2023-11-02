@@ -19,7 +19,8 @@ const useSkillStore = create((set) => ({
     { id: 15, text: "Photoshop", image: "../public/images/ico/skill/photoshop.svg", type: "tool", proficiency: 90, bgColor: "#31A8FF" },
     { id: 16, text: "Python", image: "../public/images/ico/skill/python.svg", type: "language", proficiency: 0, bgColor: "" },
     { id: 17, text: "Slack", image: "../public/images/ico/skill/slack.svg", type: "tool", proficiency: 85, bgColor: "#2EB57D" },
-    { id: 18, text: "Figma", image: "../public/images/ico/skill/figma.svg", type: "tool", proficiency: 80, bgColor: "#1ABCFE" }
+    { id: 18, text: "Figma", image: "../public/images/ico/skill/figma.svg", type: "tool", proficiency: 80, bgColor: "#1ABCFE" },
+    { id: 19, text: "Vite", image: "../public/images/ico/skill/vite.svg", type: "buildTool", proficiency: 90, bgColor: "#1ABCFE" }
   ]
 }));
 
