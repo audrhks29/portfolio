@@ -3,7 +3,7 @@ import React, { memo, useEffect, useState } from 'react';
 import { MainContainer } from '../styled/mainStyles';
 
 import Polder from '../components/Polder';
-import Background from '../components/BackGround';
+import Background from '../components/Background';
 import ProjectPopup from '../components/ProjectPopup';
 
 import useStore from '../state';
