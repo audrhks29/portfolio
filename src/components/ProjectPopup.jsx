@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 
 import { ProjectPopupContainer } from '../styled/polderStyles';
 
@@ -10,6 +10,12 @@ import useProjectStore from '../state/project';
 const ProjectPopup = memo(() => {
   const { closeProjectPopup, selectedProject, projectData, changeSelectedProject } = useProjectStore(state => state)
   const { image, title, pageLink, repoLink, isLogin } = selectedProject[0];
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
   return (
     <ProjectPopupContainer>
@@ -53,7 +59,11 @@ const ProjectPopup = memo(() => {
                 className={`slide_image_list ${id == selectedProject[0].id ? "on" : ""}`}
                 onClick={() => changeSelectedProject(id)}
               >
-                <img src={image} />
+                <img
+                  src={image}
+                  style={{ display: imageLoaded ? 'block' : 'none' }}
+                  onLoad={handleImageLoad}
+                />
               </li>
             )
           })

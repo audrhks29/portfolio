@@ -1,8 +1,13 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
+
 import useAboutMeStore from '../../state/aboutMe';
 
 const AboutMe = memo(() => {
   const { profileData, certificateData } = useAboutMeStore(state => state)
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
   return (
     <div className='about_me_content'>
       <h3>About Me !</h3>
@@ -11,7 +16,12 @@ const AboutMe = memo(() => {
           <h4>Profile</h4>
         </div>
         <div className='image_box'>
-          <img src="images/profilepic.jpg" alt="" />
+          <img
+            src="images/profilepic.jpg"
+            alt=""
+            style={{ display: imageLoaded ? 'block' : 'none' }}
+            onLoad={handleImageLoad}
+          />
         </div>
         <table className='my_info_table'>
           <tbody>

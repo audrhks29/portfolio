@@ -1,9 +1,15 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import useSkillStore from '../../../state/skill';
 
 const BuildTools = memo(() => {
   const { skillData } = useSkillStore(state => state)
   const buildSkill = skillData.filter(item => item.type === "buildTool" && item.proficiency !== 0)
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div className='section'>
       <div className='title_box'>
@@ -16,7 +22,12 @@ const BuildTools = memo(() => {
             return (
               <li key={id} className='skill_list'>
                 <div className='skill_image'>
-                  <img src={image} title={text} />
+                  <img
+                    src={image}
+                    title={text}
+                    style={{ display: imageLoaded ? 'block' : 'none' }}
+                    onLoad={handleImageLoad}
+                  />
                 </div>
                 <span className='skill_name'>{text}</span>
                 <div className='graph_box'>

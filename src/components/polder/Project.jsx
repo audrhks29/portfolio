@@ -1,12 +1,18 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 
 import useProjectStore from '../../state/project';
-import useStore from '../../state';
 
 const Project = memo(() => {
   const { projectData, openProjectPopup } = useProjectStore(state => state)
   const personalProject = projectData.filter(item => item.type === "personal")
   const teamProject = projectData.filter(item => item.type === "team")
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+  console.log(imageLoaded);
+
   return (
     <div className='project_content'>
       <h3>Project !</h3>
@@ -24,8 +30,19 @@ const Project = memo(() => {
                   className='projectList'
                   onClick={() => openProjectPopup(id)}
                 >
-                  <div className='projectImage'>
-                    <img src={image} alt="" />
+                  <div
+                    className='projectImage'
+                    style={{
+                      width: imageLoaded ? "" : '100%',
+                      height: imageLoaded ? "" : '220px'
+                    }}
+                  >
+                    <img
+                      src={image}
+                      alt=""
+                      style={{ display: imageLoaded ? 'block' : 'none', }}
+                      onLoad={handleImageLoad}
+                    />
                   </div>
                   <p className='projectName'>{title}</p>
                 </li>
@@ -48,8 +65,19 @@ const Project = memo(() => {
                   className='projectList'
                   onClick={() => openProjectPopup(id)}
                 >
-                  <div className='projectImage'>
-                    <img src={image} alt="" />
+                  <div
+                    className='projectImage'
+                    style={{
+                      width: imageLoaded ? "" : '100%',
+                      height: imageLoaded ? "" : '220px'
+                    }}
+                  >
+                    <img
+                      src={image}
+                      alt=""
+                      style={{ display: imageLoaded ? 'block' : 'none', }}
+                      onLoad={handleImageLoad}
+                    />
                   </div>
                   <p className='projectName'>{title}</p>
                 </li>

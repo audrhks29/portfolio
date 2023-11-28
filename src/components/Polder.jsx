@@ -15,6 +15,7 @@ import Home from './polder/Home';
 
 const Polder = memo(() => {
   const { currentMenu, closePopup } = useStore(state => state)
+
   return (
     <>
       <PolderContainer>

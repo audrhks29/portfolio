@@ -1,10 +1,12 @@
 import React, { memo } from 'react';
 
 import useStore from '../state';
+
 import { BackgroundContainer } from '../styled/BackgroundStyles';
 
 const Background = memo(() => {
   const { openPopup } = useStore(state => state)
+
   return (
     <>
       <BackgroundContainer>

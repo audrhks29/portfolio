@@ -1,10 +1,15 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import useSkillStore from '../../../state/skill';
 
 const Learning = memo(() => {
   const { skillData } = useSkillStore(state => state)
   const learningSkill = skillData.filter(item => item.proficiency === "learning");
   const laterSkill = skillData.filter(item => item.proficiency === 0);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
   return (
     <div className='flex_box'>
       <div className='section'>
@@ -18,7 +23,12 @@ const Learning = memo(() => {
               return (
                 <li key={id} className='learningList'>
                   <div className='learningImage'>
-                    <img src={image} alt="" />
+                    <img
+                      src={image}
+                      title={text}
+                      style={{ display: imageLoaded ? 'block' : 'none' }}
+                      onLoad={handleImageLoad}
+                    />
                   </div>
                   <p className='learningName'>{text}</p>
                 </li>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { liColor, conBgColor, liHoverColor, liOnColor, pathColor, textColor, pathHoverColor, borderColor, polderBorderColor, proPopupBgColor, galleryBgColor } from './themeColorStyles';
+import { liColor, conBgColor, liHoverColor, liOnColor, pathColor, textColor, pathHoverColor, borderColor, polderBorderColor, proPopupBgColor, galleryBgColor, skeletonGradient } from './themeColorStyles';
 
 // Polder.jsx
 export const PolderContainer = styled.div`
@@ -156,7 +156,16 @@ export const HomeContainer = styled.div`
       flex-direction:column;
       text-align:center;
       width:220px;
+      height:252px;
       padding:20px;
+      .img_box{
+        width:180px;
+        height:180px;
+        img{
+          width:100%;
+          height: 100%;
+        }
+      }
     }
     li:hover{
       background-color: ${pathColor};
@@ -200,8 +209,10 @@ export const ContentContainer = styled.div`
   // AboutMe.jsx 
   .about_me_content{
     .image_box{
+      width:280px;
       height:360px;
       margin-right:40px;
+      animation: ${skeletonGradient} 1.8s infinite ease-in-out;
       img{
         height:100%;
       }
@@ -249,6 +260,7 @@ export const ContentContainer = styled.div`
         margin-right:10px;
         img{
           width:100%;
+          height:100%;
         }
       }
       .skill_name{
