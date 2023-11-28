@@ -3,7 +3,23 @@
 ### 사용된 기술
 <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white"> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black">   <img src="https://img.shields.io/badge/styled_components-DB7093?style=flat-square&logo=styledcomponents&logoColor=white"> <img src="https://img.shields.io/badge/zustand-999999?style=flat-square&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=Netlify&logoColor=black">
 
-## 2. 추후 해결해 볼 사항
+## 2. 문제 해결
+ 1. 최초 로딩시간 개선
+      1. 이미지 리사이징 및 압축을 통한 개선
+      2. 결과
+         1. 개선전
+         ![개선전](https://github.com/audrhks29/MegaBox/assets/130128690/52c9ad6b-274d-4a6c-8b77-be4197c943de)
+         
+         2. 개선후
+         ![개선후](https://github.com/audrhks29/MegaBox/assets/130128690/ace698b1-22fc-4119-b2b9-31377eb0439a)
+
+         3. 요약
+            |        | 네트워크 전송 | 리소스 |  완료  |  로드  |
+            | :----: | :-----------: | :----: | :----: | :----: |
+            | 개선전 |     20MB      | 20.1MB | 6.47초 | 6.08초 |
+            | 개선후 |     1.8MB     | 1.9MB  | 1.02초 | 1.09초 |
+            
+## 3. 추후 해결해 볼 사항
  <details>
 <summary>도커라이즈</summary>
 <div markdown="1">       
