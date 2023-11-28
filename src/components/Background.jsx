@@ -13,7 +13,7 @@ const Background = memo(() => {
           className='polder_box'
           onClick={openPopup}
         >
-          <img src="/images/projectImage/basic.png" alt="" />
+          <img src="images/projectImage/basic.png" alt="" />
           <p>PORTFOLIO</p>
         </div>
       </BackgroundContainer>

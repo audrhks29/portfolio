@@ -8,10 +8,10 @@ const useStore = create((set, getState) => ({
   activatedMenu: [],
 
   menu: [
-    { id: 1, label: "Home", image: "/images/ico/ui/home.webp", path: null },
-    { id: 2, label: "About Me", image: "/images/ico/ui/html.png", path: "about me" },
-    { id: 3, label: "Skill", image: "/images/ico/ui/css.png", path: "skill" },
-    { id: 4, label: "Project", image: "/images/ico/ui/js.png", path: "project" }
+    { id: 1, label: "Home", image: "images/ico/ui/home.webp", path: null },
+    { id: 2, label: "About Me", image: "images/ico/ui/html.png", path: "about me" },
+    { id: 3, label: "Skill", image: "images/ico/ui/css.png", path: "skill" },
+    { id: 4, label: "Project", image: "images/ico/ui/js.png", path: "project" }
   ],
 
   openPopup: () => {
@@ -20,7 +20,7 @@ const useStore = create((set, getState) => ({
       set({
         activatedMenu:
           [
-            { id: 1, label: "Home", image: "/images/ico/ui/home.webp", path: null }
+            { id: 1, label: "Home", image: "images/ico/ui/home.webp", path: null }
           ]
       })
       set({ popupState: true, currentMenu: 1 })

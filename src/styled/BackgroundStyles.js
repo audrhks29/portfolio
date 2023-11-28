@@ -4,7 +4,7 @@ import { pathColor } from './themeColorStyles';
 export const BackgroundContainer = styled.div`
   height: 100%;
   width: 100%;
-  background-image:url("/images/wallpaper.jpg");
+  background-image:url("images/wallpaper.jpg");
   background-size:cover;
   padding:10px;
   font-size:14px;

@@ -7,7 +7,7 @@ const useProjectStore = create((set, getState) => ({
   projectData: [
     {
       id: 1,
-      image: "/images/projectImage/electCar.png",
+      image: "images/projectImage/electCar.png",
       title: "ElectCar",
       type: "personal",
       pageLink: "https://audrhks29.github.io/ElectCar/dist/",
@@ -16,7 +16,7 @@ const useProjectStore = create((set, getState) => ({
     },
     {
       id: 2,
-      image: "/images/projectImage/semoseo.png",
+      image: "images/projectImage/semoseo.png",
       title: "Semoseo",
       type: "personal",
       pageLink: "https://audrhks29.github.io/Semoseo/dist",
@@ -25,7 +25,7 @@ const useProjectStore = create((set, getState) => ({
     },
     {
       id: 3,
-      image: "/images/projectImage/forment.png",
+      image: "images/projectImage/forment.png",
       title: "Forment",
       type: "personal",
       pageLink: "https://audrhks29.github.io/Forment/dist",
@@ -34,7 +34,7 @@ const useProjectStore = create((set, getState) => ({
     },
     {
       id: 4,
-      image: "/images/projectImage/mancity.png",
+      image: "images/projectImage/mancity.png",
       title: "ManCity",
       type: "personal",
       pageLink: "https://audrhks29.github.io/ManCity/dist/",
@@ -43,7 +43,7 @@ const useProjectStore = create((set, getState) => ({
     },
     {
       id: 5,
-      image: "/images/projectImage/megabox.png",
+      image: "images/projectImage/megabox.png",
       title: "Megabox",
       type: "personal",
       pageLink: "https://audrhks29.github.io/MegaBox/dist/",
@@ -52,7 +52,7 @@ const useProjectStore = create((set, getState) => ({
     },
     {
       id: 6,
-      image: "/images/projectImage/fsm.png",
+      image: "images/projectImage/fsm.png",
       title: "FSM",
       type: "team",
       pageLink: "https://hajinkimm.github.io/TP_FSM/dist/",
@@ -61,7 +61,7 @@ const useProjectStore = create((set, getState) => ({
     },
     {
       id: 7,
-      image: "/images/projectImage/eztourmobile.png",
+      image: "images/projectImage/eztourmobile.png",
       title: "EZtour-Mobile",
       type: "team",
       pageLink: "https://yeonhub.github.io/TP-EZtour_vanillaJS_mobile/",
@@ -70,7 +70,7 @@ const useProjectStore = create((set, getState) => ({
     },
     {
       id: 8,
-      image: "/images/projectImage/eztour.png",
+      image: "images/projectImage/eztour.png",
       title: "EZtour",
       type: "team",
       pageLink: "https://audrhks29.github.io/Team-project-VanillaJS/Team-project-VanillaJS/index.html",

@@ -11,7 +11,7 @@ const AboutMe = memo(() => {
           <h4>Profile</h4>
         </div>
         <div className='image_box'>
-          <img src="/images/profilepic.jpg" alt="" />
+          <img src="images/profilepic.jpg" alt="" />
         </div>
         <table className='my_info_table'>
           <tbody>
