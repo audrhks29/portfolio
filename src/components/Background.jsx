@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 
-
 import useStore from '../state';
 import { BackgroundContainer } from '../styled/BackgroundStyles';
 

@@ -10,7 +10,7 @@ import useProjectStore from '../state/project';
 const ProjectPopup = memo(() => {
   const { closeProjectPopup, selectedProject, projectData, changeSelectedProject } = useProjectStore(state => state)
   const { image, title, pageLink, repoLink, isLogin } = selectedProject[0];
-  console.log(selectedProject);
+
   return (
     <ProjectPopupContainer>
       <div className='top_box'>
