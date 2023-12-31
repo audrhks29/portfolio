@@ -1,6 +1,7 @@
 import create from 'zustand';
+import { IndexTypes } from './stateTypes';
 
-const useStore = create((set, getState) => ({
+const useStore = create<IndexTypes>((set, getState) => ({
   popupState: false,
 
   currentMenu: 1,

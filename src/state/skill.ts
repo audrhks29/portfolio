@@ -1,6 +1,7 @@
 import create from 'zustand';
+import { SkillTypes } from './stateTypes';
 
-const useSkillStore = create((set) => ({
+const useSkillStore = create<SkillTypes>(() => ({
   skillData: [
     { id: 1, text: "HTML5", image: "images/ico/skill/html5.svg", type: "language", proficiency: 90, bgColor: "#E34F26" },
     { id: 2, text: "CSS3", image: "images/ico/skill/css3.svg", type: "language", proficiency: 90, bgColor: "#1572b6" },
@@ -20,7 +21,8 @@ const useSkillStore = create((set) => ({
     { id: 16, text: "Python", image: "images/ico/skill/python.svg", type: "language", proficiency: 0, bgColor: "" },
     { id: 17, text: "Slack", image: "images/ico/skill/slack.svg", type: "tool", proficiency: 85, bgColor: "#2EB57D" },
     { id: 18, text: "Figma", image: "images/ico/skill/figma.svg", type: "tool", proficiency: 80, bgColor: "#1ABCFE" },
-    { id: 19, text: "Vite", image: "images/ico/skill/vite.svg", type: "buildTool", proficiency: 90, bgColor: "#1ABCFE" }
+    { id: 19, text: "Vite", image: "images/ico/skill/vite.svg", type: "buildTool", proficiency: 90, bgColor: "#1ABCFE" },
+    { id: 20, text: "TypeScript", image: "images/ico/skill/typescript.png", type: "language", proficiency: 40, bgColor: "#1ABCFE" }
   ]
 }));
 

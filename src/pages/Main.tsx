@@ -6,12 +6,16 @@ import Polder from '../components/Polder';
 import Background from '../components/Background';
 import ProjectPopup from '../components/ProjectPopup';
 
-
 import useStore from '../state';
 import useProjectStore from '../state/project';
 
-const Main = memo(() => {
-  const { popupState, currentMenu } = useStore(state => state)
+interface StoreState {
+  popupState: boolean;
+  currentMenu: number;
+}
+
+const Main: React.FC = memo(() => {
+  const { popupState, currentMenu }: StoreState = useStore(state => state);
   const { projectPopupState } = useProjectStore(state => state);
   const [conHeight, setConHeight] = useState()
 

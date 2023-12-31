@@ -1,6 +1,7 @@
 import create from 'zustand';
+import { AboutMeTypes } from './stateTypes';
 
-const useAboutMeStore = create((set) => ({
+const useAboutMeStore = create<AboutMeTypes>(() => ({
   profileData: [
     { id: 1, label: "Name", text: "이명관" },
     { id: 2, label: "Tel", text: "010-8825-6093" },

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { textColor } from './themeColorStyles';
 
 // main.jsx
-export const MainContainer = styled.div`
+export const MainContainer = styled.div< { heightProp: number } >`
   width: 100%;
   height: ${(props) => props.heightProp}px;
   position: relative;

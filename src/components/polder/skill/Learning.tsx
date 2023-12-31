@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import { memo, useState } from 'react';
 import useSkillStore from '../../../state/skill';
 
 const Learning = memo(() => {

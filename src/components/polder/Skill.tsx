@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import useSkillStore from '../../state/skill';
+import { memo } from 'react';
+
 import LanguageSkill from './skill/LanguageSkill';
 import AvailableTools from './skill/AvailableTools';
 import Library from './skill/Library';

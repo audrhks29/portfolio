@@ -1,8 +1,9 @@
 import create from 'zustand';
+import { ProjectTypes } from './stateTypes';
 
-const useProjectStore = create((set, getState) => ({
+const useProjectStore = create<ProjectTypes>((set, getState) => ({
   projectPopupState: false,
-  selectedProject: {},
+  selectedProject: [],
 
   projectData: [
     {

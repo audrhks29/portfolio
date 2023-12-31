@@ -1,24 +1,23 @@
-import React, { memo, useState } from 'react';
+import { memo, useState } from 'react';
 import useSkillStore from '../../../state/skill';
 
-const AvailableTools = memo(() => {
+const Library = memo(() => {
   const { skillData } = useSkillStore(state => state)
-  const AvailableToolsSkill = skillData.filter(item => item.type === "tool" && item.proficiency !== 0)
+  const librarySkill = skillData.filter(item => item.type === "library" && item.proficiency !== 0)
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
-
   return (
     <div className='section'>
       <div className='title_box'>
-        <h4> Available Tools</h4>
+        <h4>Library</h4>
       </div>
       <ul>
         {
-          AvailableToolsSkill.map(item => {
-            const { id, text, image, proficiency, bgColor } = item;
+          librarySkill.map(item => {
+            const { id, text, image, proficiency } = item;
             return (
               <li key={id} className='skill_list'>
                 <div className='skill_image'>
@@ -46,4 +45,4 @@ const AvailableTools = memo(() => {
   );
 });
 
-export default AvailableTools;
+export default Library;
