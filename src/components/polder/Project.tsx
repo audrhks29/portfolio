@@ -11,40 +11,39 @@ const Project = memo(() => {
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
-  console.log(imageLoaded);
 
   return (
-    <div className='project_content'>
+    <div>
       <h3>Project !</h3>
       <div className='section'>
         <div className='title_box'>
           <h4>Personal Project</h4>
         </div>
-        <ul>
+        <ul className='flex flex-wrap'>
           {
             personalProject.map(item => {
               const { id, title, image } = item;
               return (
                 <li
                   key={id}
-                  className='projectList'
+                  className='w-[220px] p-[20px] flex flex-col justify-end items-center cursor-pointer hover:bg-pathColor'
                   onClick={() => openProjectPopup(id)}
                 >
                   <div
-                    className='projectImage'
                     style={{
                       width: imageLoaded ? "" : '100%',
                       height: imageLoaded ? "" : '220px'
                     }}
                   >
                     <img
+                      className="max-w-full max-h-[220px]"
                       src={image}
                       alt=""
                       style={{ display: imageLoaded ? 'block' : 'none', }}
                       onLoad={handleImageLoad}
                     />
                   </div>
-                  <p className='projectName'>{title}</p>
+                  <p className='text-center'>{title}</p>
                 </li>
               )
             })
@@ -55,31 +54,31 @@ const Project = memo(() => {
         <div className='title_box'>
           <h4>Team Project</h4>
         </div>
-        <ul>
+        <ul className='flex flex-wrap'>
           {
             teamProject.map(item => {
               const { id, title, image } = item;
               return (
                 <li
                   key={id}
-                  className='projectList'
+                  className="w-[220px] p-[20px] flex flex-col justify-end items-center cursor-pointer hover:bg-pathColor"
                   onClick={() => openProjectPopup(id)}
                 >
                   <div
-                    className='projectImage'
                     style={{
                       width: imageLoaded ? "" : '100%',
                       height: imageLoaded ? "" : '220px'
                     }}
                   >
                     <img
+                      className="max-w-full max-h-[220px]"
                       src={image}
                       alt=""
                       style={{ display: imageLoaded ? 'block' : 'none', }}
                       onLoad={handleImageLoad}
                     />
                   </div>
-                  <p className='projectName'>{title}</p>
+                  <p className='text-center'>{title}</p>
                 </li>
               )
             })

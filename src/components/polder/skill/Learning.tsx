@@ -11,26 +11,27 @@ const Learning = memo(() => {
     setImageLoaded(true);
   };
   return (
-    <div className='flex_box'>
+    <div className='flex'>
       <div className='section'>
         <div className='title_box'>
           <h4>Learning</h4>
         </div>
-        <ul>
+        <ul className='flex flex-wrap'>
           {
             learningSkill.map(item => {
               const { id, text, image } = item;
               return (
-                <li key={id} className='learningList'>
-                  <div className='learningImage'>
+                <li key={id} className='hover:bg-pathColor'>
+                  <div>
                     <img
+                      className='w-[150px] p-[20px]'
                       src={image}
                       title={text}
                       style={{ display: imageLoaded ? 'block' : 'none' }}
                       onLoad={handleImageLoad}
                     />
                   </div>
-                  <p className='learningName'>{text}</p>
+                  <p className='text-center'>{text}</p>
                 </li>
               )
             })
@@ -41,16 +42,19 @@ const Learning = memo(() => {
         <div className='title_box'>
           <h4>Skills to learn later</h4>
         </div>
-        <ul>
+        <ul className='flex flex-wrap'>
           {
             laterSkill.map(item => {
               const { id, text, image } = item;
               return (
                 <li key={id} className='learningList'>
                   <div className='learningImage'>
-                    <img src={image} alt="" />
+                    <img
+                      className='w-[150px] p-[20px]'
+                      src={image} alt=""
+                    />
                   </div>
-                  <p className='learningName'>{text}</p>
+                  <p className='text-center'>{text}</p>
                 </li>
               )
             })

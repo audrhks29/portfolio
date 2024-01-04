@@ -1,7 +1,5 @@
 import React, { memo, useEffect, useState } from 'react';
 
-import { MainContainer } from '../styled/mainStyles';
-
 import Polder from '../components/Polder';
 import Background from '../components/Background';
 import ProjectPopup from '../components/ProjectPopup';
@@ -17,7 +15,7 @@ interface StoreState {
 const Main: React.FC = memo(() => {
   const { popupState, currentMenu }: StoreState = useStore(state => state);
   const { projectPopupState } = useProjectStore(state => state);
-  const [conHeight, setConHeight] = useState()
+  const [conHeight, setConHeight] = useState<number>(0)
 
   useEffect(() => {
     const height = window.innerHeight;
@@ -25,11 +23,12 @@ const Main: React.FC = memo(() => {
   }, [currentMenu])
 
   return (
-    <MainContainer heightProp={conHeight}>
+    <div className='w-full relative text-white'
+      style={{ height: conHeight }}>
       <Background />
       {popupState && <Polder />}
       {popupState && projectPopupState && <ProjectPopup />}
-    </MainContainer>
+    </div>
   );
 });
 

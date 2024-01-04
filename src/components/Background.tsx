@@ -2,22 +2,23 @@ import { memo } from 'react';
 
 import useStore from '../state';
 
-import { BackgroundContainer } from '../styled/BackgroundStyles';
-
 const Background = memo(() => {
   const { openPopup } = useStore(state => state)
 
   return (
     <>
-      <BackgroundContainer>
+      <div
+        className='h-full w-full bg-cover p-[10px] text-[14px]'
+        style={{ backgroundImage: 'url(images/wallpaper.jpg)' }}
+      >
         <div
-          className='polder_box'
+          className='w-[110px] p-[10px] hover:bg-pathColor'
           onClick={openPopup}
         >
-          <img src="images/projectImage/basic.png" alt="" />
-          <p>PORTFOLIO</p>
+          <img src="images/projectImage/basic.png" alt="" className='w-full' />
+          <p className='text-center tracking-[0.5px]'>PORTFOLIO</p>
         </div>
-      </BackgroundContainer>
+      </div>
     </>
   );
 });

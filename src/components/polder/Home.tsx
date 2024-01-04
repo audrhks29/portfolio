@@ -1,7 +1,5 @@
 import { memo, useState } from 'react';
 
-import { HomeContainer } from '../../styled/polderStyles';
-
 import useStore from '../../state';
 
 const Home = memo(() => {
@@ -17,8 +15,8 @@ const Home = memo(() => {
   };
 
   return (
-    <HomeContainer>
-      <ul className='polder'>
+    <div>
+      <ul className='flex w-full'>
         {
           filteredMenu.map(item => {
             const { id, label, image } = item;
@@ -26,10 +24,11 @@ const Home = memo(() => {
               <li
                 key={id}
                 onClick={() => handleClickMenu(id)}
+                className='flex flex-col text-center w-[220px] h-[252px] p-5 hover:bg-pathColor'
               >
-                <div className='img_box'>
+                <div className='w-[180px] h-[180px]'>
                   <img
-                    className='loadedImg'
+                    className='w-full h-full'
                     src={image}
                     alt={label}
                     style={{ display: imageLoaded ? 'block' : 'none' }}
@@ -42,7 +41,7 @@ const Home = memo(() => {
           })
         }
       </ul>
-    </HomeContainer>
+    </div>
   );
 });
 

@@ -8,7 +8,7 @@ import BuildTools from './skill/BuildTools';
 
 const Skill = memo(() => {
   return (
-    <div className='skill_content'>
+    <div className='text-[16px]'>
       <h3>Skill !</h3>
       <LanguageSkill />
       <Library />

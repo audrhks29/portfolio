@@ -1,5 +1,4 @@
 import { memo, useState } from 'react';
-
 import useAboutMeStore from '../../state/aboutMe';
 
 const AboutMe = memo(() => {
@@ -9,29 +8,36 @@ const AboutMe = memo(() => {
     setImageLoaded(true);
   };
   return (
-    <div className='about_me_content'>
+    <div>
       <h3>About Me !</h3>
       <div className='section'>
         <div className='title_box'>
           <h4>Profile</h4>
         </div>
-        <div className='image_box'>
-          <img
+        <div className="w-[280px] h-[360px] mr-10">
+          <img className='w-full h-full'
             src="images/profilepic.jpg"
             alt=""
             style={{ display: imageLoaded ? 'block' : 'none' }}
             onLoad={handleImageLoad}
           />
+          {!imageLoaded && <div className='w-full h-full bg-slate-900 animate-pulse'>
+
+          </div>}
         </div>
-        <table className='my_info_table'>
+        <table>
           <tbody>
+            <colgroup>
+              <col width={120} />
+              {/* <col width={400} /> */}
+            </colgroup>
             {
               profileData.map(item => {
                 const { id, label, text } = item;
                 return (
                   <tr key={id}>
-                    <th>{label}</th>
-                    <td>{text}</td>
+                    <th className="v-a-m text-left">{label}</th>
+                    <td className="v-a-m">{text}</td>
                   </tr>
                 )
               })
@@ -40,10 +46,10 @@ const AboutMe = memo(() => {
         </table>
       </div>
       <div className='section'>
-        <div className='title_box'>
-          <h4>Certificate</h4>
+        <div className="w-full">
+          <h4 >Certificate</h4>
         </div>
-        <table className='certificate_table'>
+        <table>
           <colgroup>
             <col width={220} />
             <col width={400} />
@@ -51,9 +57,9 @@ const AboutMe = memo(() => {
           </colgroup>
           <thead>
             <tr>
-              <th>Acquisition date</th>
-              <th>Certification type</th>
-              <th>Publisher</th>
+              <th className='cer-th'>Acquisition date</th>
+              <th className='cer-th'>Certification type</th>
+              <th className='cer-th'>Publisher</th>
             </tr>
           </thead>
           <tbody>
@@ -62,9 +68,9 @@ const AboutMe = memo(() => {
                 const { id, acqDate, type, publisher } = item;
                 return (
                   <tr key={id}>
-                    <td>{acqDate}</td>
-                    <td>{type}</td>
-                    <td>{publisher}</td>
+                    <td className="cer-td v-a-m">{acqDate}</td>
+                    <td className='cer-td v-a-m'>{type}</td>
+                    <td className='cer-td v-a-m'>{publisher}</td>
                   </tr>
                 )
               })

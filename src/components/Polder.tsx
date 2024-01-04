@@ -1,7 +1,5 @@
 import { memo } from 'react';
 
-import { ContentContainer, PolderContainer } from '../styled/polderStyles';
-
 import useStore from '../state';
 
 import { AiOutlineClose } from 'react-icons/ai';
@@ -18,24 +16,24 @@ const Polder = memo(() => {
 
   return (
     <>
-      <PolderContainer>
+      <div className="w-4/5 bg-liOnColor absolute top-1/2 left-1/2 overflow-hidden transform translate-x-[-50%] translate-y-[-50%] border rounded-[10px] border-solid border-polderBorderColor" >
         <Menu />
         <Path />
-        <ContentContainer>
+        <div className="w-full p-5 h-[800px] overflow-auto bg-conBgColor rounded-b-[10px] text-[20px]">
           {currentMenu === 1 && <Home />}
           {currentMenu === 2 && <AboutMe />}
           {currentMenu === 3 && <Skill />}
           {currentMenu === 4 && <Project />}
-        </ContentContainer>
+        </div>
         <div
-          className='popup_close_box'
+          className="absolute top-0 right-0 px-[10px] py-1 cursor-pointer hover:bg-[#C42B1C]"
           onClick={closePopup}
         >
           <i>
             <AiOutlineClose />
           </i>
         </div>
-      </PolderContainer>
+      </div>
     </>
   );
 });

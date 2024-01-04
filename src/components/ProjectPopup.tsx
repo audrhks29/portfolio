@@ -1,7 +1,5 @@
 import { memo, useState } from 'react';
 
-import { ProjectPopupContainer } from '../styled/polderStyles';
-
 import { AiOutlineClose, AiOutlinePicture } from 'react-icons/ai';
 import { GiClick } from 'react-icons/gi';
 
@@ -18,12 +16,12 @@ const ProjectPopup = memo(() => {
   };
 
   return (
-    <ProjectPopupContainer>
-      <div className='top_box'>
-        <i className='gallery_icon'><AiOutlinePicture /></i>
+    <div className='w-1/2 h-[850px] absolute bg-proPopupBgColor top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-solid border-polderBorderColor rounded-[10px] text-textColor overflow-hidden'>
+      <div className='flex items-center'>
+        <i className='text-[20px] p-[10px] mr-[10px] bg-galleryBgColor'><AiOutlinePicture /></i>
         <span>{title}</span>
         <div
-          className='projectPopup_close_box'
+          className='absolute top-0 right-0 px-[10px] py-1 cursor-pointer hover:bg-[#C42B1C]'
           onClick={closeProjectPopup}
         >
           <i>
@@ -31,35 +29,36 @@ const ProjectPopup = memo(() => {
           </i>
         </div>
       </div>
-      <div className='popup_desc'>
-        <div className='image_box'>
-          <img src={image} />
+      <div className='my-[20px]'>
+        <div className='flex flex-col items-center h-[520px]'>
+          <img src={image} className="max-w-[90%] max-h-full" />
         </div>
-        <div className='link_box'>
-          <p>
-            <a href={pageLink} target="_blank">Go to Site</a>
-            <i><GiClick /></i>
+        <div className='mt-[20px] text-center text-[18px] h-[96px]'>
+          <p className='flex items-center justify-center'>
+            <a href={pageLink} target="_blank" className='text-textColor'>Go to Site</a>
+            <i className='ml-[10px]'><GiClick /></i>
+          </p>
+          <p className='flex items-center justify-center'>
+            <a href={repoLink} target="_blank" className='text-textColor'>Go to Git Repositories</a>
+            <i className="ml-[10px]"><GiClick /></i>
           </p>
           <p>
-            <a href={repoLink} target="_blank">Go to Git Repositories</a>
-            <i><GiClick /></i>
-          </p>
-          <p>
-            {isLogin && <span>ID : user / PW : 1234</span>}
+            {isLogin && <span className='text-[16px]'>ID : user / PW : 1234</span>}
           </p>
         </div>
       </div>
-      <ul className='slide_image_box'>
+      <ul className='max-w-[90%] flex justify-center w-full m-auto p-[10px] bg-[#2e2e2e]'>
         {
           projectData.map(item => {
             const { id, image } = item;
             return (
               <li
                 key={id}
-                className={`slide_image_list ${id == selectedProject[0].id ? "on" : ""}`}
+                className={`w-[85px] h-[85px] p-[5px] mx-[5px] flex items-center bg-[#393939] rounded-[10px] cursor-pointer hover:bg-[#454545] ${id == selectedProject[0].id ? "border border-solid border-polderBorderColor bg-[#393939]" : ""}`}
                 onClick={() => changeSelectedProject(id)}
               >
                 <img
+                  className='mx-auto my-0 max-w-full max-h-full'
                   src={image}
                   style={{ display: imageLoaded ? 'block' : 'none' }}
                   onLoad={handleImageLoad}
@@ -69,7 +68,7 @@ const ProjectPopup = memo(() => {
           })
         }
       </ul>
-    </ProjectPopupContainer>
+    </div >
   );
 });
 

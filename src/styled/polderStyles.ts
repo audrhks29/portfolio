@@ -3,7 +3,7 @@ import { liColor, conBgColor, liHoverColor, liOnColor, pathColor, textColor, pat
 
 // Polder.jsx
 export const PolderContainer = styled.div`
-  width:80%;
+  /* width:80%;
   transition: width 0.6s ease;
   background-color:${liColor};
   position:absolute;
@@ -12,31 +12,31 @@ export const PolderContainer = styled.div`
   transform: translate(-50%,-50%);
   border: 1px solid ${polderBorderColor};
   border-radius:10px;
-  overflow:hidden;
-  .popup_close_box{
+  overflow:hidden; */
+  /* .popup_close_box{
     position:absolute;
     top:0;
     right:0;
     padding:4px 10px;
     cursor: pointer;
-  }
-  .popup_close_box:hover{
+  } */
+  /* .popup_close_box:hover{
     background-color: #C42B1C;
-  }
+  } */
   
 `
 
 // Menu.jsx
 export const MenuContainer = styled.ul`
-  width:100%;
+  /* width:100%;
   height:100%;
   line-height:35px;
   display: flex;
   align-self:center;
   padding:10px 0 0 10px;
   color:${textColor};
-  font-size:14px;
-  li{
+  font-size:14px; */
+  /* li{
     background-color:${liColor};
     width:200px;
     cursor: pointer;
@@ -74,26 +74,26 @@ export const MenuContainer = styled.ul`
   }
   li:hover{
     background-color: ${liHoverColor};
-  }
+  } */
 `
 
 // Path.jsx
 export const PathContainer = styled.div`
-  color:${textColor};
+  /* color:${textColor};
   width:100%;
   height:45px;
   background-color: ${liOnColor};
   border-top: 1px solid ${conBgColor};
   display: flex;
   position: relative;
-  border-bottom:1px solid ${borderColor};
+  border-bottom:1px solid ${borderColor}; */
   .icon_box{
-    display: flex;
+    /* display: flex;
     width:200px;
     height:100%;
     align-items:center;
-    justify-content:space-around;
-    li{
+    justify-content:space-around; */
+    /* li{
       cursor:pointer;
       width:32px;
       height:32px;
@@ -105,43 +105,40 @@ export const PathContainer = styled.div`
         left:50%;
         transform:translate(-50%,-50%) translateY(1px);
       }
-    }
-    li:hover{
+    } */
+    /* li:hover{
       background-color: ${pathColor};
-    }
-    span{
-      font-size:14px;
-    }
+    } */
   }
   .path_box{
-    width: calc(100% - 200px);
+    /* width: calc(100% - 200px);
     height:45px;
     display:flex;
     position:absolute;
     top:50%;
     left:200px;
     transform:translateY(-50%);
-    align-items:center;
+    align-items:center; */
     .path_box_inner{
-      background-color: ${pathColor};
+      /* background-color: ${pathColor};
       width: 100%;
       height:32px;
       line-height:30px;
       padding:0 10px;
-      display:flex;
-      li{
+      display:flex; */
+      /* li{
         margin-right:10px;
         i{
           vertical-align: middle;
         }
-      }
-      .can_hover{
+      } */
+      /* .can_hover{
         cursor: pointer;
         padding : 0 5px;
       }
       .can_hover:hover{
         background-color: ${pathHoverColor};
-      }
+      } */
     }
   }
 `
@@ -149,46 +146,46 @@ export const PathContainer = styled.div`
 // Home.jsx
 export const HomeContainer = styled.div`
   .polder{
-    display: flex;
-    width: 100%;
+    /* display: flex;
+    width: 100%; */
     li{
-      display: flex;
+      /* display: flex;
       flex-direction:column;
       text-align:center;
       width:220px;
       height:252px;
-      padding:20px;
+      padding:20px; */
       .img_box{
-        width:180px;
-        height:180px;
+        /* width:180px;
+        height:180px; */
         img{
-          width:100%;
-          height: 100%;
+          /* width:100%;
+          height: 100%; */
         }
       }
     }
     li:hover{
-      background-color: ${pathColor};
+      /* background-color: ${pathColor}; */
     }
   }
 `
 
 export const ContentContainer = styled.div`
-  width: 100%;
+  /* width: 100%;
   padding:20px;
   font-size:20px;
   height:800px;
   overflow: auto;
   background-color: ${conBgColor};
-  border-radius:0 0 10px 10px;
-  h3{
+  border-radius:0 0 10px 10px; */
+  /* h3{
     font-size:30px;
     width:100%;
     font-weight:700;
     padding-bottom:20px;
     border-bottom: 1px solid ${borderColor};
-  }
-  .section{
+  } */
+  /* .section{
     display: flex; 
     flex-wrap: wrap;
     padding:20px 0;
@@ -201,23 +198,23 @@ export const ContentContainer = styled.div`
         font-weight:700;
       }
     }
-  }
-  .section:last-child{
+  } */
+  /* .section:last-child{
     border:none;
-  }
+  } */
 
   // AboutMe.jsx 
   .about_me_content{
     .image_box{
-      width:280px;
+      /* width:280px;
       height:360px;
-      margin-right:40px;
+      margin-right:40px; */
       animation: ${skeletonGradient} 1.8s infinite ease-in-out;
       img{
-        height:100%;
+        /* height:100%; */
       }
     }
-    .my_info_table{
+    /* .my_info_table{
       tr{
         th,td{
           vertical-align:middle;
@@ -227,8 +224,8 @@ export const ContentContainer = styled.div`
           width:120px;
         }
       }
-    }
-    .certificate_table{
+    } */
+    /* .certificate_table{
       tr{
         th,td{
           vertical-align:middle;
@@ -239,16 +236,16 @@ export const ContentContainer = styled.div`
         }
       }
       th{
-        font-weight:700;
+          font-weight:700;
       }
       td:nth-child(2){
         text-align:left;
       }
-    }
+    } */
   }
 
   // Skill.jsx 
-  .skill_content{
+  /* .skill_content{
     font-size:16px;
     .skill_list{
       display:flex;
@@ -295,10 +292,10 @@ export const ContentContainer = styled.div`
         padding:20px;
       }
     }
-  }
+  } */
 
   // project.jsx & flex_box class
-  .project_content, .flex_box{
+  /* .project_content, .flex_box{
     ul{
       display:flex;
       flex-wrap:wrap;
@@ -324,12 +321,12 @@ export const ContentContainer = styled.div`
         background-color: ${pathColor};
       }
     }
-  }
+  } */
 `
 
 // ProjectPopup.jsx
 export const ProjectPopupContainer = styled.div`
-  width: 50%;
+  /* width: 50%;
   height: 850px;
   position: absolute;
   background: ${proPopupBgColor};
@@ -339,66 +336,66 @@ export const ProjectPopupContainer = styled.div`
   border: 1px solid ${polderBorderColor};
   border-radius: 10px;
   color:${textColor};
-  overflow: hidden;
+  overflow: hidden; */
   .top_box{
-    display: flex;
-    align-items:center;
+    /* display: flex;
+    align-items:center; */
     .gallery_icon{
-      font-size:20px;
+      /* font-size:20px;
       padding:10px;
       margin-right:10px;
-      background: ${galleryBgColor};
+      background: ${galleryBgColor}; */
     }
     .projectPopup_close_box{
-      position:absolute;
+      /* position:absolute;
       top:0;
       right:0;
       padding:4px 10px;
-      cursor: pointer;
+      cursor: pointer; */
     }
     .projectPopup_close_box:hover{
-      background-color: #C42B1C;
+      /* background-color: #C42B1C; */
     }
   }
   .popup_desc{
-    margin:20px 0;
+    /* margin:20px 0; */
     .image_box{
-      display:flex;
+      /* display:flex;
       flex-direction:column;
       align-items: center;
-      height: 520px;
+      height: 520px; */
       img{
-        max-width:90%;
-        max-height:100%;
+        /* max-width:90%;
+        max-height:100%; */
       }
     }
     .link_box{
-      margin-top:20px;
+      /* margin-top:20px;
       text-align:center;
       font-size:18px;
-      height:96px;
+      height:96px; */
       span{
-        font-size:16px;
+        /* font-size:16px; */
       }
       a{
-        color:${textColor};
+        /* color:${textColor}; */
       }
       i{
-        vertical-align:middle;
-        margin-left:10px;
+        /* vertical-align:middle;
+        margin-left:10px; */
       }
     }
   }
   .slide_image_box{
-    max-width:90%;
+    /* max-width:90%;
     display:flex;
     justify-content:center;
     width:100%;
     margin:auto;
     padding:10px;
-    background-color: #2e2e2e;
+    background-color: #2e2e2e; */
     .slide_image_list{
-      width:85px;
+      /* width:85px;
       height:85px;
       padding:5px;
       margin:0 5px;
@@ -411,14 +408,14 @@ export const ProjectPopupContainer = styled.div`
         margin:0 auto;
         max-width:100%;
         max-height:100%;
-      }
+      } */
     }
     .slide_image_list:hover{
-      background-color: #454545;
+      /* background-color: #454545; */
     }
     .slide_image_list.on{
-      border:1px solid #DB9FE5;
-      background-color: #393939;
+      /* border:1px solid #DB9FE5;
+      background-color: #393939; */
     }
   }
   
