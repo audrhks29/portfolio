@@ -22,7 +22,8 @@ const useSkillStore = create<SkillTypes>(() => ({
     { id: 17, text: "Slack", image: "images/ico/skill/slack.svg", type: "tool", proficiency: 85, bgColor: "#2EB57D" },
     { id: 18, text: "Figma", image: "images/ico/skill/figma.svg", type: "tool", proficiency: 80, bgColor: "#1ABCFE" },
     { id: 19, text: "Vite", image: "images/ico/skill/vite.svg", type: "buildTool", proficiency: 90, bgColor: "#1ABCFE" },
-    { id: 20, text: "TypeScript", image: "images/ico/skill/typescript.png", type: "language", proficiency: 40, bgColor: "#1ABCFE" }
+    { id: 20, text: "TailwindCSS", image: "images/ico/skill/tailwind.png", type: "language", proficiency: 80, bgColor: "#1ABCFE" },
+    { id: 21, text: "TypeScript", image: "images/ico/skill/typescript.png", type: "language", proficiency: 60, bgColor: "#1ABCFE" },
   ]
 }));
 
