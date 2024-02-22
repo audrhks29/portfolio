@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import useStore from '../state';
+import useMenuStore from '../state/menu-store';
 
 const Background = memo(() => {
-  const { openPopup } = useStore(state => state)
+  const { openPopup } = useMenuStore(state => state)
 
   return (
     <>

@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import useStore from '../state';
+import useMenuStore from '../state/menu-store';
 
 import { AiOutlineClose } from 'react-icons/ai';
 
@@ -12,7 +12,7 @@ import Path from './polder/navigation/Path';
 import Home from './polder/Home';
 
 const Polder = memo(() => {
-  const { currentMenu, closePopup } = useStore(state => state)
+  const { currentMenu, closePopup } = useMenuStore(state => state)
 
   return (
     <>

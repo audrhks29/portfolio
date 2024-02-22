@@ -1,19 +1,19 @@
 import { memo, useState } from 'react';
-import useSkillStore from '../../../state/skill';
+
+import skillList from '../../../assets/skill.json'
+
 const AvailableTools = memo(() => {
-  const { skillData } = useSkillStore(state => state)
-  const AvailableToolsSkill = skillData.filter(item => item.type === "tool" && item.proficiency !== 0)
+  const AvailableToolsSkill = skillList.filter(item => item.type === "tool" && item.proficiency !== 0)
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
+  const handleImageLoad = () => setImageLoaded(true);
 
   return (
     <div className='section'>
       <div className='title_box'>
         <h4>Available Tools</h4>
       </div>
+
       <ul>
         {
           AvailableToolsSkill.map(item => {

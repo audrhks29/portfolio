@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "label": "Name",
+    "text": "이명관"
+  },
+  {
+    "id": 2,
+    "label": "Tel",
+    "text": "010-8825-6093"
+  },
+  {
+    "id": 3,
+    "label": "Birth",
+    "text": "1998.11.29"
+  },
+  {
+    "id": 4,
+    "label": "Address",
+    "text": "인천광역시 연수구 연수동"
+  },
+  {
+    "id": 5,
+    "label": "Email",
+    "text": "audrhks29@gmail.com"
+  },
+  {
+    "id": 6,
+    "label": "Edu",
+    "text": "유한대학교(2년제)"
+  }
+]

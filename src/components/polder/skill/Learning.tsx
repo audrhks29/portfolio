@@ -1,21 +1,22 @@
 import { memo, useState } from 'react';
-import useSkillStore from '../../../state/skill';
+
+import skillList from '../../../assets/skill.json'
 
 const Learning = memo(() => {
-  const { skillData } = useSkillStore(state => state)
-  const learningSkill = skillData.filter(item => item.proficiency === "learning");
-  const laterSkill = skillData.filter(item => item.proficiency === 0);
+  const learningSkill = skillList.filter(item => item.proficiency === "learning");
+  const laterSkill = skillList.filter(item => item.proficiency === 0);
+
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
+  const handleImageLoad = () => setImageLoaded(true);
   return (
     <div className='flex'>
+
       <div className='section'>
         <div className='title_box'>
           <h4>Learning</h4>
         </div>
+
         <ul className='flex flex-wrap'>
           {
             learningSkill.map(item => {
@@ -38,10 +39,12 @@ const Learning = memo(() => {
           }
         </ul>
       </div>
+
       <div className='section'>
         <div className='title_box'>
           <h4>Skills to learn later</h4>
         </div>
+
         <ul className='flex flex-wrap'>
           {
             laterSkill.map(item => {

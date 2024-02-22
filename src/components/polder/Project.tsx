@@ -1,16 +1,18 @@
 import { memo, useState } from 'react';
 
-import useProjectStore from '../../state/project';
+import useProjectStore from '../../state/project-store';
+
+import projectList from '../../assets/project.json'
 
 const Project = memo(() => {
-  const { projectData, openProjectPopup } = useProjectStore(state => state)
-  const personalProject = projectData.filter(item => item.type === "personal")
-  const teamProject = projectData.filter(item => item.type === "team")
+  const { openProjectPopup } = useProjectStore(state => state);
+
+  const personalProject = projectList.filter(item => item.type === "personal");
+  const teamProject = projectList.filter(item => item.type === "team");
+
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
+  const handleImageLoad = () => setImageLoaded(true);
 
   return (
     <div>

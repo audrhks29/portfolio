@@ -3,17 +3,17 @@ import { memo, useState } from 'react';
 import { AiOutlineClose, AiOutlinePicture } from 'react-icons/ai';
 import { GiClick } from 'react-icons/gi';
 
-import useProjectStore from '../state/project';
+import projectList from '../assets/project.json'
+
+import useProjectStore from '../state/project-store';
 
 const ProjectPopup = memo(() => {
-  const { closeProjectPopup, selectedProject, projectData, changeSelectedProject } = useProjectStore(state => state)
+  const { closeProjectPopup, selectedProject, changeSelectedProject } = useProjectStore(state => state)
   const { image, title, pageLink, repoLink, isLogin } = selectedProject[0];
 
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
+  const handleImageLoad = () => setImageLoaded(true);
 
   return (
     <div className='w-1/2 h-[850px] absolute bg-proPopupBgColor top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-solid border-polderBorderColor rounded-[10px] text-textColor overflow-hidden'>
@@ -49,7 +49,7 @@ const ProjectPopup = memo(() => {
       </div>
       <ul className='max-w-[90%] flex justify-center w-full m-auto p-[10px] bg-[#2e2e2e]'>
         {
-          projectData.map(item => {
+          projectList.map(item => {
             const { id, image } = item;
             return (
               <li

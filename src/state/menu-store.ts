@@ -1,7 +1,6 @@
 import create from 'zustand';
-import { IndexTypes } from './stateTypes';
 
-const useStore = create<IndexTypes>((set, getState) => ({
+const useMenuStore = create<MenuStoreTypes>((set, getState) => ({
   popupState: false,
 
   currentMenu: 1,
@@ -61,4 +60,4 @@ const useStore = create<IndexTypes>((set, getState) => ({
   }
 }));
 
-export default useStore;
+export default useMenuStore;

@@ -5,11 +5,11 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineArrowUp, AiOutlineHom
 import { BsArrowClockwise } from 'react-icons/bs';
 import { BiChevronRight } from 'react-icons/bi';
 
-import useStore from '../../../state';
+import useMenuStore from '../../../state/menu-store';
 
 const Path = memo(() => {
-  const { menu, currentMenu } = useStore(state => state);
-  const { handleGotoHome } = useStore(state => state);
+  const { menu, currentMenu } = useMenuStore(state => state);
+  const { handleGotoHome } = useMenuStore(state => state);
 
   const pathName = () => {
     if (currentMenu == 0) return
@@ -33,13 +33,13 @@ const Path = memo(() => {
             onClick={handleGotoHome}
             className="mr-[10px] cursor-pointer px-[5px] hover:bg-pathHoverColor"
           >
-            <i className='v-a-m'><AiOutlineHome /></i>
+            <i className='align-middle'><AiOutlineHome /></i>
           </li>
           {
             pathName() !== null &&
             <>
               <li className='mr-[10px]'>
-                <i className='v-a-m'><BiChevronRight /></i>
+                <i className='align-middle'><BiChevronRight /></i>
               </li>
               <span>{pathName()}</span>
             </>

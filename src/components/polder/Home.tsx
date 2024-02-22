@@ -1,18 +1,16 @@
 import { memo, useState } from 'react';
 
-import useStore from '../../state';
+import useMenuStore from '../../state/menu-store';
 
 const Home = memo(() => {
-  const { menu } = useStore(state => state);
-  const { handleClickMenu } = useStore(state => state);
+  const { menu } = useMenuStore(state => state);
+  const { handleClickMenu } = useMenuStore(state => state);
 
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const filteredMenu = menu.filter(item => item.id !== 1);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
+  const handleImageLoad = () => setImageLoaded(true);
 
   return (
     <div>
