@@ -19,7 +19,7 @@
     "id": 3,
     "text": "TailwindCSS",
     "image": "images/ico/skill/tailwind.png",
-    "type": "language",
+    "type": "framework",
     "proficiency": 90,
     "bgColor": "#1ABCFE"
   },
@@ -100,7 +100,7 @@
     "text": "Nextjs",
     "image": "images/ico/skill/nextjs-white.svg",
     "type": "framework",
-    "proficiency": "learning",
+    "proficiency": "35",
     "bgColor": ""
   },
   {

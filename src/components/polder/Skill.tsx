@@ -5,6 +5,7 @@ import AvailableTools from './skill/AvailableTools';
 import Library from './skill/Library';
 import Learning from './skill/Learning';
 import BuildTools from './skill/BuildTools';
+import Framework from './skill/Framework';
 
 const Skill = memo(() => {
   return (
@@ -12,6 +13,7 @@ const Skill = memo(() => {
       <h3>Skill !</h3>
       <LanguageSkill />
       <Library />
+      <Framework />
       <AvailableTools />
       <BuildTools />
       <Learning />

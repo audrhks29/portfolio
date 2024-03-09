@@ -24,6 +24,10 @@ export default {
           "@apply flex flex-wrap p-5 border-b border-solid border-gray-700":
             "",
         },
+        ".section:last-child": {
+          "@apply border-none":
+            "",
+        },
         ".section h4": {
           "@apply text-[24px] mb-[10px] font-bold":
             "",

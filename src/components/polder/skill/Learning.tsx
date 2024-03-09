@@ -12,7 +12,7 @@ const Learning = memo(() => {
   return (
     <div className='flex'>
 
-      <div className='section'>
+      {learningSkill.length > 0 && <div className='section'>
         <div className='title_box'>
           <h4>Learning</h4>
         </div>
@@ -38,7 +38,7 @@ const Learning = memo(() => {
             })
           }
         </ul>
-      </div>
+      </div>}
 
       <div className='section'>
         <div className='title_box'>
