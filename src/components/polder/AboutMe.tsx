@@ -51,8 +51,8 @@ const AboutMe = memo(() => {
                 <a href='https://myungkwans.notion.site/0776aeb1017347aaa70e153a9a3b612e'>
                   Notion</a></td>
               <td className='hover:text-slate-500'>
-                <a href='https://velog.io/@myungkwan/posts'>
-                  Velog</a></td>
+                <a href='https://frontendmk.tistory.com/'>
+                  Blog</a></td>
             </tr>
           </tbody>
         </table>
