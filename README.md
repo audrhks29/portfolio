@@ -12,7 +12,7 @@
 | CSS        | <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=black"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"> |
 
 
-[사이트 바로가기](https://portfolio-b85gnx9nq-myunkwan-lees-projects.vercel.app/)
+[사이트 바로가기](https://portfolio-myunkwan-lees-projects.vercel.app/)
 
 ## 2. 문제 해결
  1. 최초 로딩시간 개선
